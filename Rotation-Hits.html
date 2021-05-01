@@ -119,15 +119,13 @@ function playswitch() {
   }
 }
 
-</script>
-	
-<script>
+
 
 if ('mediaSession' in navigator) {
 
 	navigator.mediaSession.metadata = new MediaMetadata({
 		title: 'ROTATION HITS',
-		artist: <%= this.title %>' - '<%= this.artist.name %>,
+		artist: this.title' - 'this.artist.name,
 		album: 'Hier laufen die Hits',
 		artwork: [{ 
 			src: 'https://static.wixstatic.com/media/e3ffed_2c84a809b2334b65a10fb5226e6c6c51~mv2_d_3000_3000_s_4_2.png', 
