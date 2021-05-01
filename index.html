@@ -117,16 +117,13 @@ function playswitch() {
   }
 }
 
-</script>
 
-	
-<script>
 
 if ('mediaSession' in navigator) {
 
 	navigator.mediaSession.metadata = new MediaMetadata({
 		title: 'RADIO ROTATION',
-		artist: <%= this.title %>' - '<%= this.artist.name %>,
+		artist: this.title' - 'this.artist.name ,
 		album: 'Die grösste Musikabwechslung',
 		artwork: [{ 
 			src: 'https://static.wixstatic.com/media/1bf8c6_95e11fa0279a4ee5b8b1257ec91c82b2~mv2.png',
