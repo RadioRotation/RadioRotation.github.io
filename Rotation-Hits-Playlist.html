@@ -94,7 +94,7 @@ ul li {
       </script>
 
       <script>
-        laut.fm.station('rotation-hits').last_songs({container:'songs', template:'songs_template'}, true);
+        laut.fm.station('rotation-hits').last_songs({container:'songs-p', template:'songs_template'}, true);
       </script>
 
       <script type="text/html" id="songs_template" charset="utf-8">
@@ -105,8 +105,8 @@ ul li {
         <% }); %>
       </script>
 
-<br><br><h1>Die Letzten 10 Hits</h1><br><br>
-      <ul id="songs" >
+<br><br><h1 style="z-index: 1; margin: 3px; padding: 10px;">Die Letzten 10 Hits</h1><br><br>
+      <ul id="songs-p" >
       </ul>
 
 </div>
