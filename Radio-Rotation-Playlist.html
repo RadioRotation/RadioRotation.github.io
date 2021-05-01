@@ -38,6 +38,40 @@ border-bottom: 5px solid #00ffff;
 }
 
 
+.pointer {cursor: pointer;}
+  *{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  }
+
+  ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  }
+li:nth-child(1){
+    display: none;
+}
+
+li:nth-child(10){
+    border-bottom-style: none;
+}
+
+ul li {
+
+  border-width: 1px;
+  border-color: #fff;
+  border-bottom-style: solid;
+  margin: 0px;
+
+  padding:6px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
 
 
 </style>
@@ -53,17 +87,29 @@ border-bottom: 5px solid #00ffff;
 </div>
 <div Class="content">
 
-<div Class="btn.play">
-<a onclick="playswitch()"><img id="playbtn" src="IMG/ICONS/play.png" style="z-index: 2; background-color: Black; position: fixed; bottom: 30%; right: 3%; margin: none;  padding: 20px; border: 3px solid #00ffff; " alt="play"  width="10%"></a>
+
+  <meta content="text/html;charset=utf-8" http-equiv="content-type">
+    <script type="text/javascript" src="//api.laut.fm/js_tools/lautfm_js_tools.0.10.0.js">
+    </script>
+
+    <script>
+      laut.fm.station('radio-rotation').last_songs({container:'songs', template:'songs_template'}, true);
+    </script>
+
+    <script type="text/html" id="songs_template" charset="utf-8">
+      <% this.forEach(function(song){ %>
+        <li>
+        	<%= song.started_at.humanTimeShort('hh:mm') %> | <b><%= song.title %></b> - <%= song.artist.name %>
+        </li>
+      <% }); %>
+    </script>
 
 
-<div id="song" style="z-index: 1; position: fixed; bottom: 15%; width: 90%; margin: 3px; padding: 10px; border: 3px solid #00ffff; "></div>
-
-
-
+    <ul id="songs" >
+    </ul>
 </div>
 
-</div>
+
 
 <div class="body" style="position: fixed; ">
 <a href="index.html"><img src="IMG/ICONS/home.png" style="z-index: 1; position: fixed; bottom: 2%; left: 3%; margin: none; " alt="HOME"  width="14%"></a>
