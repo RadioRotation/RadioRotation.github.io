@@ -19,7 +19,7 @@ color: White;
 }
 
 body {
-  background-color: black;
+	background-color: black;
    }
 
 .Center {
@@ -36,7 +36,6 @@ padding-bottom: 10px;
 border-bottom: 5px solid #00ffff;
 
 }
-
 
 
 .pointer {cursor: pointer;}
@@ -74,51 +73,31 @@ ul li {
 
 }
 
+
 </style>
 <body style="padding: none; margin: none;">
 
 <div class="HEAD, nav">
 
-<img src="IMG/LOGO-rh.png" style="z-index: 1; position: absolute; top: 3%; left: 3%; margin: none; " alt="LOGO"  width="30%">
+<img src="IMG/LOGO-rr.png" style="z-index: 1; position: absolute; top: 3%; left: 3%; margin: none; " alt="LOGO"  width="30%">
   <svg width="100%" height="20%" style="z-index: 0; ">
-  <polygon points="0,0 0,150 800,0" style="fill:#990000" />
-
+  <polygon points="0,0 0,150 800,0" style="fill:#009999" />
 
 </svg>
 </div>
 <div Class="content">
 
 
-    <meta content="text/html;charset=utf-8" http-equiv="content-type">
-      <script type="text/javascript" src="//api.laut.fm/js_tools/lautfm_js_tools.0.10.0.js">
-      </script>
-
-      <script>
-        laut.fm.station('rotation-hits').last_songs({container:'songs', template:'songs_template'}, true);
-      </script>
-
-      <script type="text/html" id="songs_template" charset="utf-8">
-        <% this.forEach(function(song){ %>
-          <li>
-          	<%= song.started_at.humanTimeShort('hh:mm') %> | <b><%= song.title %></b> - <%= song.artist.name %>
-          </li>
-        <% }); %>
-      </script>
-
-<br><br><h1>Die Letzten 10 Hits</h1><br><br>
-      <ul id="songs" >
-      </ul>
-
 </div>
 
 
 
 <div class="body" style="position: fixed; ">
-<a href="Rotation-Hits.html"><img src="IMG/ICONS/home.png" style="z-index: 1; position: fixed; bottom: 2%; left: 3%; margin: none; " alt="HOME"  width="14%"></a>
-<a href="Rotation-Hits-Playlist.html"><img src="IMG/ICONS/playlist.png" style="z-index: 1; position: fixed; bottom: 2%; left: 23%; margin: none; " alt="PLAYLIST"  width="14%"></a>
-<a href="index.html"><img src="IMG/ICONS/radio.png" style="z-index: 1; position: fixed; bottom: 2%; left: 43%; margin: none; " alt="RADIO WECHSELN"  width="14%"></a>
-<a href="Rotation-Hits-news.html"><img src="IMG/ICONS/news.png" style="z-index: 1; position: fixed; bottom: 2%; left: 63%; margin: none; " alt="NEWS"  width="14%"></a>
-<a href="Rotation-Hits-options.html"><img src="IMG/ICONS/menu.png" style="z-index: 1; position: fixed; bottom: 2%; left: 83%; margin: none; " alt="MENU"  width="14%"></a>
+<a href="index.html"><img src="IMG/ICONS/home.png" style="z-index: 1; position: fixed; bottom: 2%; left: 3%; margin: none; " alt="HOME"  width="14%"></a>
+<a href="Radio-Rotation-Playlist.html"><img src="IMG/ICONS/playlist.png" style="z-index: 1; position: fixed; bottom: 2%; left: 23%; margin: none; " alt="PLAYLIST"  width="14%"></a>
+<a href="Rotation-Hits.html"><img src="IMG/ICONS/radio.png" style="z-index: 1; position: fixed; bottom: 2%; left: 43%; margin: none; " alt="RADIO WECHSELN"  width="14%"></a>
+<a href="Radio-Rotation-news.html"><img src="IMG/ICONS/news.png" style="z-index: 1; position: fixed; bottom: 2%; left: 63%; margin: none; " alt="NEWS"  width="14%"></a>
+<a href="Radio-Rotation-options.html"><img src="IMG/ICONS/menu.png" style="z-index: 1; position: fixed; bottom: 2%; left: 83%; margin: none; " alt="MENU"  width="14%"></a>
 </div>
 
 </body>
@@ -128,7 +107,7 @@ ul li {
 <h1><strong><%= this.title %></strong> <br> <%= this.artist.name %></h1>
 </script>
 
-<script type="text/javascript" charset="utf-8"> laut.fm.station('rotation-hits')
+<script type="text/javascript" charset="utf-8"> laut.fm.station('radio-rotation')
 .info({container:'station', template:'station_template'})
 .current_song({container:'song', template:'song_template'}, true);
 </script>
@@ -138,7 +117,7 @@ ul li {
 
 <audio autoplay id="audio_player">
 
-  <source src="https://rotation-hits.stream.laut.fm/rotation-hits" type="audio/mpeg">
+  <source src="https://radio-rotation.stream.laut.fm/radio-rotation" type="audio/mpeg">
 
 </audio>
 
@@ -170,14 +149,14 @@ function playswitch() {
 if ('mediaSession' in navigator) {
 
 	navigator.mediaSession.metadata = new MediaMetadata({
-		title: 'ROTATION HITS',
-		artist: 'Hier laufen die Hits',
-		album: 'Hier laufen die Hits',
+		title: 'RADIO ROTATION',
+		artist: 'Die grösste Musikabwechslung' ,
+		album: 'Die grösste Musikabwechslung',
 		artwork: [{
-			src: 'https://static.wixstatic.com/media/e3ffed_2c84a809b2334b65a10fb5226e6c6c51~mv2_d_3000_3000_s_4_2.png',
+			src: 'https://static.wixstatic.com/media/1bf8c6_95e11fa0279a4ee5b8b1257ec91c82b2~mv2.png',
 			sizes: '1000x1000',
 			type: 'image/png'
-		},]
+        },]
 	});
 
 
@@ -195,14 +174,13 @@ if ('mediaSession' in navigator) {
 	//Function N&P
 
 	function n() {
-		window.open("https://radiorotation.github.io/", "_self", "titlebar=no, status=no, fullscreen=no, toolbar=no, scrollbars=no, resizable=no, top=50%, left=200px,width= 520px,height=810px");
+		window.open("https://radiorotation.github.io/Rotation-Hits.html", "_self", "titlebar=no, status=no, fullscreen=no, toolbar=no, scrollbars=no, resizable=no, top=50%, left=200px,width= 520px,height=810px");
 	};
 
 	function p() {
-		window.open("https://radiorotation.github.io/", "_self", "titlebar=no, status=no, fullscreen=no, toolbar=no, scrollbars=no, resizable=no, top=50%, left=200px,width= 520px,height=810px");
+		window.open("https://radiorotation.github.io/Rotation-Hits.html", "_self", "titlebar=no, status=no, fullscreen=no, toolbar=no, scrollbars=no, resizable=no, top=50%, left=200px,width= 520px,height=810px");
 	};
 
 };
 
 </script>
-<script>play()</script>

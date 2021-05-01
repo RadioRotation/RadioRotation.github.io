@@ -19,7 +19,7 @@ color: White;
 }
 
 body {
-  background-color: black;
+	background-color: black;
    }
 
 .Center {
@@ -38,8 +38,43 @@ border-bottom: 5px solid #00ffff;
 }
 
 
+.pointer {cursor: pointer;}
+  *{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  }
+
+  ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  }
+li:nth-child(1){
+    display: none;
+}
+
+li:nth-child(10){
+    border-bottom-style: none;
+}
+
+ul li {
+
+  border-width: 1px;
+  border-color: #fff;
+  border-bottom-style: solid;
+  margin: 0px;
+
+  padding:6px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
 
 
+</style>
 </style>
 <body style="padding: none; margin: none;">
 
@@ -122,7 +157,7 @@ function playswitch() {
 
 
 if ('mediaSession' in navigator) {
-
+document.getElementById("playbtn").src="IMG/ICONS/pause.png";
 	navigator.mediaSession.metadata = new MediaMetadata({
 		title: 'ROTATION HITS',
 		artist: 'Hier laufen die Hits',
@@ -159,3 +194,4 @@ if ('mediaSession' in navigator) {
 };
 
 </script>
+<script>play()</script>
